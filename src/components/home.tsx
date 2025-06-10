@@ -19,7 +19,14 @@ const HomePage = () => {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="container mx-auto p-4 flex justify-between items-center">
-        <div className="text-2xl font-bold text-primary">InspiroAI</div>
+        <div className="flex items-center gap-3">
+          <img
+            src="/images/image.png"
+            alt="InspiroAI Logo"
+            className="h-10 w-10"
+          />
+          <div className="text-2xl font-bold text-orange-600">InspiroAI</div>
+        </div>
         <div className="flex gap-4">
           <Button
             variant="ghost"
@@ -51,7 +58,12 @@ const HomePage = () => {
           >
             How It Works
           </Button>
-          <Button onClick={scrollToGenerator}>Get Started</Button>
+          <Button
+            onClick={scrollToGenerator}
+            className="bg-orange-600 hover:bg-orange-700"
+          >
+            Get Started
+          </Button>
         </div>
       </nav>
 
@@ -80,7 +92,11 @@ const HomePage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            <Button size="lg" onClick={scrollToGenerator}>
+            <Button
+              size="lg"
+              onClick={scrollToGenerator}
+              className="bg-orange-600 hover:bg-orange-700"
+            >
               Get Started <ArrowDown className="ml-2 h-4 w-4" />
             </Button>
           </motion.div>
@@ -153,9 +169,6 @@ const HomePage = () => {
         id="features-section"
         className="container mx-auto py-16 px-4 md:py-24"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Features
-        </h2>
         <FeatureSection />
       </section>
 
@@ -165,9 +178,6 @@ const HomePage = () => {
         className="bg-muted py-16 px-4 md:py-24"
       >
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-            How It Works
-          </h2>
           <HowItWorks />
         </div>
       </section>
@@ -177,20 +187,29 @@ const HomePage = () => {
         id="generator-section"
         className="container mx-auto py-16 px-4 md:py-24"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-          Create Your Poem or Essay Now!
-        </h2>
         <GeneratorInterface />
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12 px-4">
+      <footer className="bg-muted py-12 px-4">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-            <div className="text-2xl font-bold mb-4 md:mb-0">InspiroAI</div>
+            <div className="flex items-center gap-3 mb-4 md:mb-0">
+              <img
+                src="/images/image.png"
+                alt="InspiroAI Logo"
+                className="h-8 w-8"
+              />
+              <div className="text-2xl font-bold text-orange-600">
+                InspiroAI
+              </div>
+            </div>
             <div className="flex flex-col md:flex-row items-center gap-4">
               <p className="text-lg font-medium">Ready to Get Started?</p>
-              <Button variant="secondary" onClick={scrollToGenerator}>
+              <Button
+                onClick={scrollToGenerator}
+                className="bg-orange-600 hover:bg-orange-700"
+              >
                 Create My Poem or Essay
               </Button>
             </div>
